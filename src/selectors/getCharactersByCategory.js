@@ -1,5 +1,3 @@
-
-import { getCharacters } from "../api";
 import { fetchAllCharacters } from "../helper/fetchAllCharacters";
 
 
@@ -15,9 +13,8 @@ export const getCharactersByCategory = async (category) => {
         throw new Error (`Category ${category} is not correct`);
     }
     
-    console.log(characters)
-    const hola =  characters.filter(character => character.category === category );
-    return hola;
+    return characters.filter(character => character.category === category );
+    
     
       // return characters
 }

@@ -3,11 +3,14 @@ import { breakingbadApi } from "../api";
 
 
 
-export const fetchAllCharacters  =async () => {
+export const fetchAllCharacters  = async () => {
 
    const {data} = await breakingbadApi.get('/characters');
-   console.log(data)
+   // console.log(data)
+   
    return data;
+   
+   
 
 
 }

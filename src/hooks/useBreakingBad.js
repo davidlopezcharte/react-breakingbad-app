@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { fetchAllCharacters } from "../helper/fetchAllCharacters"
 import { getCharactersByCategory } from "../selectors/getCharactersByCategory"
 
 
@@ -10,8 +9,8 @@ export const useBreakingBad = ({category}) => {
     const [characterList, setCharacterList] = useState([])
 
 
-    
-
+    // const character = useMemo(() => getCharactersByCategory(category), [category])
+    // const character = getCharactersByCategory(category)
     useEffect(() => {
 
         // getCharactersByCategory()
@@ -26,7 +25,7 @@ export const useBreakingBad = ({category}) => {
         
     
             
-        }, [])  
+        }, [category])  
 
 
     return {
