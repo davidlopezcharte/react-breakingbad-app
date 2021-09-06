@@ -18,7 +18,7 @@ export const CharacterList =  (category) => {
     // const { characterList} = useMemo(() => GetBreakingBad(category), [category])
     
 
-
+    console.log(characterList)
    
     
     
@@ -39,7 +39,7 @@ export const CharacterList =  (category) => {
 
             
             
-            {/* {
+            {
                 (isLoading) ? 
                 
                     
@@ -56,10 +56,12 @@ export const CharacterList =  (category) => {
                         />
                     ))
                  
-            } */}
+            }
         </div>
-        
-    )
+
+
+)
+   
 }
 
 

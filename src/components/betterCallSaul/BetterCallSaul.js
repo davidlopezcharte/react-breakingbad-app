@@ -11,7 +11,7 @@ export const BetterCallSaul = () => {
             <h1>Better Call Saul</h1>
             <hr/>
             
-            <CharacterList category={'Better Call Saul'}/>
+            <CharacterList category={'Breaking Bad, Better Call Saul'}/>
         </div>
     )
 }
