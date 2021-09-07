@@ -1,5 +1,4 @@
 import React from 'react'
-import { getCharactersById } from '../../selectors/getCharactersById'
 import { CharacterList } from '../characters/CharacterList'
 
 
@@ -11,7 +10,7 @@ export const BetterCallSaul = () => {
             <h1>Better Call Saul</h1>
             <hr/>
             
-            <CharacterList category={'Breaking Bad, Better Call Saul'}/>
+            <CharacterList category="Breaking Bad, Better Call Saul"/>
         </div>
     )
 }

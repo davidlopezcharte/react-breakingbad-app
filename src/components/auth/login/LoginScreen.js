@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { login, loginT } from '../../../actions/auth'
+import { login } from '../../../actions/auth'
 import { AuthContext } from '../../../auth/AuthContext'
 import { useForm } from '../../../hooks/useForm'
 import {firebase, googleAuthProvider} from '../../../firebase/firebase-config'
@@ -21,8 +21,8 @@ export const LoginScreen = ({history}) => {
     
     
     const [formValue, handleInputChange] = useForm({
-        email:'angelica@gmail.com',
-        password: '123456'
+        email:'',
+        password: ''
     })
     
     const {email, password} = formValue;
@@ -33,7 +33,7 @@ export const LoginScreen = ({history}) => {
     
     
     
-    // const [checking, setChecking] = useState(true)
+    const [checking, setChecking] = useState(false)
     
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -41,13 +41,11 @@ export const LoginScreen = ({history}) => {
        
         startLoading();
 
-        
-        // setChecking(false)
-
         firebase.auth().signInWithEmailAndPassword(email, password)
-            .then(({user}) => {
+        .then(({user}) => {
+            
+            setChecking(true)
                 
-                // if (!isMounted)
                 dispatch(login(user.uid, user.displayName))
                 finishLoading()
             })
@@ -59,7 +57,9 @@ export const LoginScreen = ({history}) => {
                     confirmButtonText: 'Ok'
                 })
                 finishLoading();
+                setChecking(false)
             })
+            
 
            
 
@@ -67,12 +67,13 @@ export const LoginScreen = ({history}) => {
             
     
             removeError();
-            // return () => {
-            //     isMounted = false;
-            //   };
+           
+           
+            
             
             
         }
+        console.log(checking)
     
         
        

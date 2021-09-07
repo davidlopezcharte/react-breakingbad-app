@@ -7,7 +7,9 @@ export const getCharactersByCategory = async (category) => {
 
     
     const characters = await fetchAllCharacters();
-    const validCategory = ['Breaking Bad','Breaking Bad, Better Call Saul' , 'Better Call Saul' ];
+    console.log(characters)
+    
+    const validCategory = ['Better Call Saul','Breaking Bad', 'Breaking Bad, Better Call Saul' ];
 
     if (!validCategory.includes(category)) {
         throw new Error (`Category ${category} is not correct`);
@@ -16,5 +18,5 @@ export const getCharactersByCategory = async (category) => {
     return characters.filter(character => character.category === category );
     
     
-      // return characters
+      
 }

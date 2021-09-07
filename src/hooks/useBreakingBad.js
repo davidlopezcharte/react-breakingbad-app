@@ -10,28 +10,36 @@ export const useBreakingBad = ({category}) => {
 
 
     // const character = useMemo(() => getCharactersByCategory(category), [category])
-    // const character = getCharactersByCategory(category)
+    
     useEffect(() => {
 
-        // getCharactersByCategory()
+        let componentMounted = true
+
+      
 
       
 
         getCharactersByCategory(category)
             .then( characters => {
-                setIsLoading(false);
-                setCharacterList(characters)
+                if(componentMounted) {
+
+                    setCharacterList(characters)
+                    setIsLoading(false);
+                }
             })
-        
-    
             
+            
+                        return () => {
+                            componentMounted = false;
+                           }
+                
         }, [category])  
-
-
-    return {
-        isLoading,
-        characterList
         
-    }
+        
+        return {
+            isLoading,
+            characterList
+            
+        }
 
 }

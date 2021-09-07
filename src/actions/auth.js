@@ -1,6 +1,5 @@
 
 
-import firebase from "firebase"
 import { types } from "../types/types"
 
 

@@ -24,10 +24,10 @@ export const CharacterScreen =  () => {
     const {
         img,
         name,
-        birthday,
         occupation,
         nickname,
-        portrayed
+        status
+        
 
     } = getCharacterId;
 
@@ -68,6 +68,7 @@ export const CharacterScreen =  () => {
                                 <h5 className="card-title"><b>{name}</b></h5>
                                 <p className="card-text"><b>Occupation:</b> {occupation}</p>
                                 <p className="card-text"> <b>NickName: </b>{nickname}</p>
+                                <p className="card-text"> <b>Status: </b>{status}</p>
                                 <button 
                                     className="btn btn-primary"
                                     onClick={handleClick}>

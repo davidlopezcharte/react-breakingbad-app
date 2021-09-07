@@ -1,0 +1,84 @@
+.card__main{
+    min-width: 230px;
+    max-width: 180px;
+    max-height: 45vh;
+    border-radius: 5px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    margin: 10px auto;
+    cursor: pointer;
+    display: inline-block;
+    
+   
+}
+
+.card__main img {
+    width: auto;
+    height: auto;
+    width:300px;
+    transition: all 0.15s linear;
+    position: relative;
+    top: -15%;
+    left: -25%;
+    filter: brightness(70%);
+    // height: 100%; width: 100%; 
+}
+ 
+.card__main .card__profile-name {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #FFF;
+    padding: 15px 10px;
+    transition: all 0.15s linear;
+}
+ 
+.card__main .card__profile-position {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.596);
+    left: 30px;
+    top: 45px;
+    transition: all 0.15s linear;
+}
+ 
+.card__main .card__profile-overview {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 50%, rgba(255, 255, 0, 0));
+    color: #FFF;
+    padding: 50px 0px 40px 0px;
+    transition: all 0.15s linear;
+}
+ 
+.card__main .card__profile-overview h3{
+    font-weight: bold;
+    font-size: 15px;
+    padding-left: 20px;
+}
+ 
+.card__main .card__profile-overview p {
+    color: rgba(255, 255, 255, 0.7);
+    padding-left: 25px;
+    padding-right: 25px;
+}
+ 
+.card__main:hover .card__profile-name {
+    padding-left: 25px;
+}
+ 
+.card__main:hover .card__profile-position {
+    left: 40px;
+}
+ 
+.card__main:hover .card__profile-overview {
+    padding-bottom: 25px;
+}
+ 
+.card__main img:hover {
+    transform: scale(1.01);
+}

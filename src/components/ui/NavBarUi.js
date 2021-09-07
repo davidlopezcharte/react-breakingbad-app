@@ -7,15 +7,14 @@ import { Link } from 'react-router-dom';
 import { logout } from '../../actions/auth';
 import logo from '../../assets/logo/logo1.png'
 import { AuthContext } from '../../auth/AuthContext';
-import { useLogin } from '../../hooks/useLogin';
-import { useUiError } from '../../hooks/useUiError';
+
 
 
 
 
     
 export const NavBarUi = () => {
-  const { startLoading} = useUiError();
+  
 
   const {user, dispatch} = useContext(AuthContext)
   
@@ -38,7 +37,6 @@ export const NavBarUi = () => {
      
   }
 
-  // console.log(isMounted)
 
   
   
@@ -105,66 +103,3 @@ export const NavBarUi = () => {
   
 };
 
-{/* <div className="">
-  <ul className="navbar-nav ms-auto">
-    <span >
-      David
-    </span>
-    <button
-      className="btn" 
-    >
-      Logout
-    </button>
-  </ul>
-</div> */}
-
-{/* <div className="navbar-collapse collapse w-50 order-3 dual-collapse2">
-      <ul className="navbar-nav ms-auto">
-          <NavLink 
-              activeClassName="active"
-              className="nav-item nav-link" 
-              exact
-              to="/login"
-          >
-              Logout
-          </NavLink>
-      </ul>
-  </div> */}
-
-
-
-
-              // <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-              //     <div className="container-fluid">
-              //         <Link
-              //             className="navbar-brand"
-              //             to="/">
-              //                 Home
-              //         </Link>
-              //         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-              //             <span className="navbar-toggler-icon"></span>
-              //         </button>
-              //         <div className="collapse navbar-collapse" id="navbarText">
-              //             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              //                 <li className="nav-item">
-              //                     <NavLink className="nav-link ml " aria-current="page" to="/breakingbad">
-              //                         Breaking Bad
-              //                     </NavLink>
-              //                 </li>
-              //                 <li className="nav-item">
-              //                     <NavLink className="nav-link" to="/bettercallsaul">
-              //                         Better Call Saul
-              //                     </NavLink>
-              //                 </li>
-              //                 <li className="nav-item">
-              //                     <NavLink className="nav-link" to="/search">
-              //                         Search
-              //                     </NavLink>
-              //                 </li>
-              //             </ul>
-              //             <span className="navbar-text">
-              //                 Logout
-              //             </span>
-              //         </div>
-              //     </div>
-              // </nav>       

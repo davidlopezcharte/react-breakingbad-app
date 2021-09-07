@@ -9,13 +9,13 @@ import { Spinners } from '../ui/Spinners'
 export const SearchScreen = ({history}) => {
 
     const location = useLocation();
-    console.log(location)
+    
     const {q = ''} = (queryString.parse(location.search));
-    console.log()
+   
    
 
     
-    const [formValue, handleInputChange]= useForm({
+    const [formValue, handleInputChange, reset]= useForm({
         searchText: q
     });
     
@@ -23,10 +23,17 @@ export const SearchScreen = ({history}) => {
     const {isLoading, characterScreen} = useSearchScreen(q);
   
 
+    
     const handleSearch = (e) => {
         e.preventDefault();
         history.push(`?q=${searchText}`)
     };
+
+    const handleDelete = (e) => {
+        reset();
+        
+
+    }
 
 
     return (
@@ -36,7 +43,7 @@ export const SearchScreen = ({history}) => {
 
             <div className="row">
                     
-                <div className="col-5">
+                <div className="col-7">
                     <h4>Search Form</h4>
                     <hr/>
 
@@ -61,7 +68,8 @@ export const SearchScreen = ({history}) => {
                         </button>
                         <button
                             type="reset"
-                            className="btn mt-1 ms-1  btn-danger btn-sm">
+                            className="btn mt-1 ms-1  btn-danger btn-sm"
+                            onClick={handleDelete}>
 
                                 Reset
 
@@ -70,11 +78,14 @@ export const SearchScreen = ({history}) => {
 
                 </div>
 
-                <div className="col-7">
+                <div className="col-5">
 
                     <h4> Results</h4>
                     <hr/>
 
+                   
+                    
+                    
                     {
                         (q=== '') &&
                         <div className= "alert alert-info">
@@ -89,18 +100,20 @@ export const SearchScreen = ({history}) => {
                         </div>
                     }
 
+                    <div className="card-group">
 
-                    {
+                        {
 
-                        (isLoading) ?
-                        <Spinners/>
+                            (isLoading) ?
+                            <Spinners/>
 
-                        :characterScreen.map(characters => (
-                            <CharacterCard
-                                key={characters.char_id}
-                                {...characters}/>
-                        ))
-                    }
+                            :characterScreen.map(characters => (
+                                <CharacterCard
+                                    key={characters.char_id}
+                                    {...characters}/>
+                            ))
+                        }
+                    </div>
 
                 </div>
 
