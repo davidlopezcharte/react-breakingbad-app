@@ -13,7 +13,7 @@ export const useBreakingBad = ({category}) => {
     
     useEffect(() => {
 
-        let componentMounted = true
+        // let componentMounted = true
 
       
 
@@ -21,17 +21,15 @@ export const useBreakingBad = ({category}) => {
 
         getCharactersByCategory(category)
             .then( characters => {
-                if(componentMounted) {
+                
 
                     setCharacterList(characters)
                     setIsLoading(false);
-                }
+                
             })
             
             
-                        return () => {
-                            componentMounted = false;
-                           }
+                        
                 
         }, [category])  
         

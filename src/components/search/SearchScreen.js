@@ -29,11 +29,7 @@ export const SearchScreen = ({history}) => {
         history.push(`?q=${searchText}`)
     };
 
-    const handleDelete = (e) => {
-        reset();
-        
-
-    }
+  
 
 
     return (
@@ -69,7 +65,7 @@ export const SearchScreen = ({history}) => {
                         <button
                             type="reset"
                             className="btn mt-1 ms-1  btn-danger btn-sm"
-                            onClick={handleDelete}>
+                            >
 
                                 Reset
 
