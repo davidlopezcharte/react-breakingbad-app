@@ -1,8 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.css';
-import firebase from 'firebase';
 import React, { useContext } from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { firebase } from '../../firebase/firebase-config';
 import { logout } from '../../actions/auth';
 import logo from '../../assets/logo/logo1.png';
 import { AuthContext } from '../../auth/AuthContext';

@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import validator from 'validator';
 import { Link } from 'react-router-dom';
-import firebase from 'firebase';
 import Swal from 'sweetalert2';
+import { firebase } from '../../../firebase/firebase-config';
 import { useForm } from '../../../hooks/useForm';
 import { useUiError } from '../../../hooks/useUiError';
 import { AuthContext } from '../../../auth/AuthContext';
