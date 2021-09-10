@@ -1,40 +1,20 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react';
 
-import { getCharactersById } from "../selectors/getCharactersById"
+import { getCharactersById } from '../selectors/getCharactersById';
 
+export const useCharacterId = (charId) => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [getCharacterId, setGetCharacterId] = useState([]);
 
+  useEffect(() => {
+    getCharactersById(charId).then((id) => {
+      setIsLoading(false);
+      setGetCharacterId(id);
+    });
+  }, [charId]);
 
-export const useCharacterId = (char_id) => {
-
-    const [isLoading, setIsLoading] = useState(true);
-    const [getCharacterId, setGetCharacterId] = useState([]);
-
-
-    
-   
-
-    useEffect(() => {
-
-        // getCharactersByCategory()
-
-      
-        getCharactersById(char_id)
-            .then( id => {
-                setIsLoading(false);
-                setGetCharacterId(id)
-                
-                
-            });
-        
-    
-            
-        }, [char_id]); 
-
-
-    return {
-        isLoading,
-        getCharacterId
-        
-    };
-
-}
+  return {
+    isLoading,
+    getCharacterId,
+  };
+};
