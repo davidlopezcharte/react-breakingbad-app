@@ -1,14 +1,13 @@
-import { fetchAllCharacters } from "../helper/fetchAllCharacters";
+import { fetchAllCharacters } from '../helper/fetchAllCharacters';
 
-export const getCharacterByName = async (name= '') => {
-    const characters = await fetchAllCharacters();
+export const getCharacterByName = async (name) => {
+  const chars = await fetchAllCharacters();
 
-    if (name === '') {
-        return [];
-    }
-    name = name.toLocaleLowerCase();
-    return characters.filter(character => character.name.toLocaleLowerCase().includes(name));
+  if (name === '') {
+    return [];
+  }
 
-
-    
-}
+  return chars.filter((char) =>
+    char.name.toLocaleLowerCase().includes(name.toLocaleLowerCase())
+  );
+};
