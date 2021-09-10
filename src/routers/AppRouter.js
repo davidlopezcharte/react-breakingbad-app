@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
-import firebase from 'firebase';
 import { BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
+import { firebase } from '../firebase/firebase-config';
 import { DashBoardRoute } from './DashBoardRoute';
 import { AuthRouter } from './AuthRouter';
 import { login } from '../actions/auth';
@@ -25,7 +25,7 @@ export const AppRouter = () => {
 
       setCheking(false);
     });
-  }, [dispatch]);
+  }, [dispatch, setIsLoggedIn, setCheking]);
 
   if (cheking) {
     return (
