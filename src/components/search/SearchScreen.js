@@ -11,7 +11,7 @@ export const SearchScreen = ({ history }) => {
 
   const { q = '' } = queryString.parse(location.search);
 
-  const [formValue, handleInputChange] = useForm({
+  const [formValue, handleInputChange, reset] = useForm({
     searchText: q,
   });
 
@@ -21,6 +21,11 @@ export const SearchScreen = ({ history }) => {
   const handleSearch = (e) => {
     e.preventDefault();
     history.push(`?q=${searchText}`);
+  };
+
+  const handleReset = () => {
+    reset();
+    history.push(`?q=`);
   };
 
   return (
@@ -46,7 +51,11 @@ export const SearchScreen = ({ history }) => {
             <button type="submit" className="btn mt-1  btn-primary btn-sm">
               Search...
             </button>
-            <button type="button" className="btn mt-1 ms-1  btn-danger btn-sm">
+            <button
+              type="reset"
+              className="btn mt-1 ms-1  btn-danger btn-sm"
+              onClick={handleReset}
+            >
               Reset
             </button>
           </form>

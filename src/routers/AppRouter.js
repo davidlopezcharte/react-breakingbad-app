@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
-import { firebase } from '../firebase/firebase-config';
+import { firebase } from '../libs/firebase/firebase-config';
 import { DashBoardRoute } from './DashBoardRoute';
 import { AuthRouter } from './AuthRouter';
-import { login } from '../actions/auth';
-import { AuthContext } from '../auth/AuthContext';
+import { login, logout } from '../context/actions/auth';
+import { AuthContext } from '../context/auth/AuthContext';
 import { PrivateRoute } from './PrivateRoute';
 import { PublicRoute } from './PublicRoute';
 
@@ -18,8 +18,10 @@ export const AppRouter = () => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user?.uid) {
         dispatch(login(user.uid, user.displayName));
+
         setIsLoggedIn(true);
       } else {
+        dispatch(logout());
         setIsLoggedIn(false);
       }
 

@@ -2,11 +2,11 @@ import React, { useContext } from 'react';
 import validator from 'validator';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import { firebase } from '../../../firebase/firebase-config';
+import { firebase } from '../../../libs/firebase/firebase-config';
 import { useForm } from '../../../hooks/useForm';
 import { useUiError } from '../../../hooks/useUiError';
-import { AuthContext } from '../../../auth/AuthContext';
-import { login } from '../../../actions/auth';
+import { AuthContext } from '../../../context/auth/AuthContext';
+import { login } from '../../../context/actions/auth';
 
 export const RegisterScreen = () => {
   const [formValue, handleInputChange] = useForm({

@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import { login } from '../../../actions/auth';
-import { AuthContext } from '../../../auth/AuthContext';
+import { login } from '../../../context/actions/auth';
+import { AuthContext } from '../../../context/auth/AuthContext';
 import { useForm } from '../../../hooks/useForm';
 import { useUiError } from '../../../hooks/useUiError';
 import {
   firebase,
   googleAuthProvider,
-} from '../../../firebase/firebase-config';
+} from '../../../libs/firebase/firebase-config';
 
 export const LoginScreen = () => {
   const { dispatch } = useContext(AuthContext);
@@ -32,7 +32,6 @@ export const LoginScreen = () => {
       .signInWithEmailAndPassword(email, password)
       .then(({ user }) => {
         dispatch(login(user.uid, user.displayName));
-        // finishLoading();
       })
       .catch(({ message }) => {
         Swal.fire({

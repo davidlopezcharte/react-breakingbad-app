@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getCharacterByName } from '../selectors/getCharacterByName';
+import { getCharacterByName } from '../context/selectors/getCharacterByName';
 
 export const useSearchScreen = (name) => {
   const [isLoading, setIsLoading] = useState(true);
