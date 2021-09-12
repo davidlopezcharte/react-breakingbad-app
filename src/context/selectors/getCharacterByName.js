@@ -1,4 +1,4 @@
-import { fetchAllCharacters } from '../helper/fetchAllCharacters';
+import { fetchAllCharacters } from '../../libs/axios/api/fetchAllCharacters';
 
 export const getCharacterByName = async (name) => {
   const chars = await fetchAllCharacters();

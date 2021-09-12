@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
-import { AuthContext } from './auth/AuthContext';
-import { authReducer } from './reducers/authReducer';
+import { AuthContext } from './context/auth/AuthContext';
+import { authReducer } from './context/reducers/authReducer';
 import { AppRouter } from './routers/AppRouter';
 
 const init = () => ({});

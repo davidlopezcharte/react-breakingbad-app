@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getCharactersByCategory } from '../selectors/getCharactersByCategory';
+import { getCharactersByCategory } from '../context/selectors/getCharactersByCategory';
 
 export const useBreakingBad = ({ category }) => {
   const [isLoading, setIsLoading] = useState(true);

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { getCharactersById } from '../selectors/getCharactersById';
+import { getCharactersById } from '../context/selectors/getCharactersById';
 
 export const useCharacterId = (charId) => {
   const [isLoading, setIsLoading] = useState(true);

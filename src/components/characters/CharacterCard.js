@@ -8,7 +8,10 @@ export const CharacterCard = ({
   nickname,
   portrayed,
 }) => (
-  <Link to={`./character/${chardId}`} className="card__main">
+  <Link
+    to={`./character/${chardId}`}
+    className="card__main animate__animated animate__fadeInLeft"
+  >
     <img src={img} className="img img-responsive " alt={name} />
     <div className="card__profile-name">{name}</div>
     <div className="card__profile-position">{nickname}</div>

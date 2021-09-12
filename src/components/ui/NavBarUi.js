@@ -2,10 +2,10 @@ import 'bootstrap/dist/css/bootstrap.css';
 import React, { useContext } from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { firebase } from '../../firebase/firebase-config';
-import { logout } from '../../actions/auth';
+import { firebase } from '../../libs/firebase/firebase-config';
+import { logout } from '../../context/actions/auth';
 import logo from '../../assets/logo/logo1.png';
-import { AuthContext } from '../../auth/AuthContext';
+import { AuthContext } from '../../context/auth/AuthContext';
 
 export const NavBarUi = () => {
   const { user, dispatch } = useContext(AuthContext);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { firebase } from '../../firebase/firebase-config';
+import { firebase } from '../../libs/firebase/firebase-config';
 
 export const ProfileScreen = ({ history }) => {
   const user = firebase.auth().currentUser;
