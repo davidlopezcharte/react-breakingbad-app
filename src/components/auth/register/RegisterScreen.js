@@ -50,7 +50,6 @@ export const RegisterScreen = () => {
         .createUserWithEmailAndPassword(email, password)
         .then(async ({ user }) => {
           await user.updateProfile({ displayName: name });
-
           dispatch(login(user.uid, user.displayName));
         })
         .catch(({ message }) => {

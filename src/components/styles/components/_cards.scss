@@ -14,13 +14,14 @@
 .card__main img {
   width: auto;
   height: auto;
-  width: 300px;
+  // width: 300px;
   transition: all 0.15s linear;
-  position: relative;
+  // position: relative;
   top: -15%;
   left: -25%;
   filter: brightness(70%);
-  // height: 100%; width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
 .card__main .card__profile-name {
