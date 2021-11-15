@@ -27,5 +27,6 @@ module.exports = {
     'no-param-reassign': [2, { props: false }],
     'object-curly-newline': 'off',
     'react/button-has-type': ['error', { reset: true }],
+    'no-console': 'off',
   },
 };
